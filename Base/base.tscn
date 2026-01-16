@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://ca1b1o4wfvaqd"]
+[gd_scene load_steps=11 format=3 uid="uid://ca1b1o4wfvaqd"]
 
 [ext_resource type="MeshLibrary" uid="uid://bo4rw1e423gnf" path="res://MeshLibraies/SpaceLibary.tres" id="1_u1x2a"]
+[ext_resource type="PackedScene" uid="uid://po5q17b0v621" path="res://Enemy/enemy.tscn" id="2_n5f2c"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cbgtc"]
 sky_top_color = Color(0.46439886, 0.474028, 0.88588184, 1)
@@ -108,3 +109,6 @@ path_continuous_u = true
 path_u_distance = 1.0
 path_joined = false
 material = SubResource("StandardMaterial3D_ws5nf")
+
+[node name="Enemy" parent="Path3D" instance=ExtResource("2_n5f2c")]
+transform = Transform3D(0.99989074, 0, 0.0146918995, 0, 1, 0, -0.0146918995, 0, 0.99989074, -13.868282, 0, 14.049806)
