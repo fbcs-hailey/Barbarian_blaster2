@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://ca1b1o4wfvaqd"]
+[gd_scene load_steps=12 format=3 uid="uid://ca1b1o4wfvaqd"]
 
 [ext_resource type="MeshLibrary" uid="uid://bo4rw1e423gnf" path="res://MeshLibraies/SpaceLibary.tres" id="1_u1x2a"]
 [ext_resource type="PackedScene" uid="uid://po5q17b0v621" path="res://Enemy/enemy.tscn" id="2_n5f2c"]
+[ext_resource type="PackedScene" uid="uid://cxk5grgwcrjno" path="res://home/home.tscn" id="3_ws5nf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cbgtc"]
 sky_top_color = Color(0.46439886, 0.474028, 0.88588184, 1)
@@ -59,7 +60,7 @@ mesh_library = ExtResource("1_u1x2a")
 cell_size = Vector3(4, 4, 4)
 cell_center_y = false
 data = {
-"cells": PackedInt32Array(65535, 65534, 0, 65535, 0, 0, 65535, 2, 0, 65531, 65535, 0, 65531, 65534, 0, 65531, 0, 0, 65531, 2, 0, 65532, 65534, 0, 65533, 0, 0, 65533, 2, 0, 65534, 65534, 0, 65534, 2, 0, 0, 65534, 0, 0, 2, 0, 1, 65534, 0, 1, 2, 0, 2, 65534, 0, 2, 0, 0, 3, 65534, 0, 3, 2, 0, 4, 65534, 0, 4, 0, 0, 4, 1, 0, 4, 2, 0, 1, 0, 0, 65531, 1, 0, 65533, 1, 0, 1, 1, 0, 65535, 65535, 0, 65533, 65534, 0, 4, 65535, 0)
+"cells": PackedInt32Array(65535, 65534, 0, 65535, 0, 0, 65535, 2, 0, 65531, 65535, 0, 65531, 65534, 0, 65531, 0, 0, 65531, 2, 0, 65532, 65534, 0, 65533, 0, 0, 65533, 2, 0, 65534, 65534, 0, 65534, 2, 0, 0, 65534, 0, 0, 2, 0, 1, 65534, 0, 1, 2, 0, 2, 65534, 0, 2, 0, 0, 3, 65534, 0, 3, 2, 0, 4, 65534, 0, 4, 0, 0, 4, 2, 0, 1, 0, 0, 65531, 1, 0, 65533, 1, 0, 1, 1, 0, 65535, 65535, 0, 65533, 65534, 0, 4, 65535, 0, 4, 1, 0)
 }
 
 [node name="Path3D" type="Path3D" parent="."]
@@ -111,4 +112,9 @@ path_joined = false
 material = SubResource("StandardMaterial3D_ws5nf")
 
 [node name="Enemy" parent="Path3D" instance=ExtResource("2_n5f2c")]
-transform = Transform3D(0.99989074, 0, 0.0146918995, 0, 1, 0, -0.0146918995, 0, 0.99989074, -13.868282, 0, 14.049806)
+transform = Transform3D(0.99988276, 0, 0.014691782, 0, 1, 0, -0.014691782, 0, 0.99988276, -13.868282, 0, 14.049806)
+loop = false
+speed = 20
+
+[node name="Home" parent="." instance=ExtResource("3_ws5nf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.237846, 0, 13.75937)
