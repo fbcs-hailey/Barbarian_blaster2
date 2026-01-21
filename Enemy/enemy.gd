@@ -14,4 +14,4 @@ func _process(delta: float) -> void:
 	progress+=delta*speed
 	if progress_ratio==1.0:
 		home.take_damage()
-		#queue_free()
+		queue_free()
