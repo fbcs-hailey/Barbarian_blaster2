@@ -8,7 +8,7 @@ var health: int :
 	set(new_health):
 		health=new_health
 		label_3d.text=str(health)+"/"+str(max_health)
-		var red:Color=Color.DARK_RED
+		var red:Color=Color.RED
 		var white:Color=Color.WHITE
 		label_3d.modulate=red.lerp(white,float(health)/float(max_health))
 		
