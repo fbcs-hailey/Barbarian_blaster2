@@ -1,4 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://t4ft8hd3vqp6"]
+[gd_scene load_steps=11 format=3 uid="uid://t4ft8hd3vqp6"]
+
+[ext_resource type="Script" uid="uid://q2bg1iud121t" path="res://Turret/turret.gd" id="1_5kpma"]
+[ext_resource type="PackedScene" uid="uid://dcb1nmqt0yxq7" path="res://Turret/projectile.tscn" id="2_djkev"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cb20n"]
 albedo_color = Color(0.18110615, 0.08980579, 1.3235956e-07, 1)
@@ -33,6 +36,8 @@ bottom_radius = 0.3
 height = 1.5
 
 [node name="Turret" type="Node3D"]
+script = ExtResource("1_5kpma")
+projectile = ExtResource("2_djkev")
 
 [node name="TurretBase" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -49,3 +54,8 @@ mesh = SubResource("BoxMesh_ttsi1")
 [node name="Canon" type="MeshInstance3D" parent="TurretBase"]
 transform = Transform3D(1, 0, 0, 0, -0.14217973, 0.98984087, 0, -0.98984087, -0.14217973, 0, 0.9305744, 0)
 mesh = SubResource("CylinderMesh_2avlq")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
