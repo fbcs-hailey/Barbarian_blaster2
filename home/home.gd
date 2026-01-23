@@ -22,6 +22,5 @@ func _ready() -> void:
 
 
 func take_damage()-> void:
-	print("damage taken at home")
 	health-=1
 	
