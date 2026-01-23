@@ -52,7 +52,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.69963145, 0)
 mesh = SubResource("BoxMesh_ttsi1")
 
 [node name="Canon" type="MeshInstance3D" parent="TurretBase"]
-transform = Transform3D(1, 0, 0, 0, -0.14217973, 0.98984087, 0, -0.98984087, -0.14217973, 0, 0.9305744, 0)
+transform = Transform3D(1, 0, 0, 0, 0.19936794, -0.9799247, 0, 0.9799247, 0.19936794, 0, 0.9305744, 0)
 mesh = SubResource("CylinderMesh_2avlq")
 
 [node name="Timer" type="Timer" parent="."]

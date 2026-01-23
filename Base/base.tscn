@@ -117,26 +117,26 @@ path_joined = false
 material = SubResource("StandardMaterial3D_ws5nf")
 
 [node name="Enemy" parent="Path3D" instance=ExtResource("2_n5f2c")]
-transform = Transform3D(0.99981076, 0, 0.018010015, 0, 1, 0, -0.018010015, 0, 0.99981076, -13.868282, 0, 11.094328)
+transform = Transform3D(0.9998107, 0, 0.018010015, 0, 1, 0, -0.018010015, 0, 0.9998107, -13.868282, 0, 11.094328)
 loop = false
 
 [node name="Enemy2" parent="Path3D" instance=ExtResource("2_n5f2c")]
-transform = Transform3D(0.9999215, 0, 0.010144022, 0, 1, 0, -0.010144022, 0, 0.9999215, -13.937099, 0, 6.094903)
+transform = Transform3D(0.99992144, 0, 0.010144022, 0, 1, 0, -0.010144022, 0, 0.99992144, -13.937099, 0, 6.094903)
 progress = 5.0
 loop = false
 
 [node name="Enemy3" parent="Path3D" instance=ExtResource("2_n5f2c")]
-transform = Transform3D(0.99996305, 0, -0.004453322, 0, 1, 0, 0.004453322, 0, 0.99996305, -13.958745, 0, 1.0947475)
+transform = Transform3D(0.999963, 0, -0.004453322, 0, 1, 0, 0.004453322, 0, 0.999963, -13.958745, 0, 1.0947475)
 progress = 10.0
 loop = false
 
 [node name="Enemy4" parent="Path3D" instance=ExtResource("2_n5f2c")]
-transform = Transform3D(0.06252342, 0, -0.99801505, 0, 1, 0, 0.99801505, 0, 0.06252342, -12.323301, 0, -2.6037729)
+transform = Transform3D(0.062523395, 0, -0.9980147, 0, 1, 0, 0.9980147, 0, 0.062523395, -12.323301, 0, -2.6037729)
 progress = 15.0
 loop = false
 
 [node name="Enemy5" parent="Path3D" instance=ExtResource("2_n5f2c")]
-transform = Transform3D(-0.07117258, 0, -0.99743676, 0, 1, 0, 0.99743676, 0, -0.07117258, -7.325039, 0, -2.600995)
+transform = Transform3D(-0.07117258, 0, -0.9974367, 0, 1, 0, 0.9974367, 0, -0.07117258, -7.325039, 0, -2.600995)
 progress = 20.0
 loop = false
 
