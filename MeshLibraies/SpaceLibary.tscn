@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cd7mbthecova7"]
+[gd_scene load_steps=8 format=3 uid="uid://cd7mbthecova7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nege7"]
-albedo_color = Color(0.71, 0.71, 0.71, 1)
+albedo_color = Color(0.62496, 0.63, 0.6237, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_5i4l4"]
 material = SubResource("StandardMaterial3D_nege7")
@@ -9,6 +9,10 @@ size = Vector3(4, 0.1, 4)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ysdw7"]
 data = PackedVector3Array(-2, 0.049999997, 2, 2, 0.049999997, 2, -2, -0.049999997, 2, 2, 0.049999997, 2, 2, -0.049999997, 2, -2, -0.049999997, 2, 2, 0.049999997, -2, -2, 0.049999997, -2, 2, -0.049999997, -2, -2, 0.049999997, -2, -2, -0.049999997, -2, 2, -0.049999997, -2, 2, 0.049999997, 2, 2, 0.049999997, -2, 2, -0.049999997, 2, 2, 0.049999997, -2, 2, -0.049999997, -2, 2, -0.049999997, 2, -2, 0.049999997, -2, -2, 0.049999997, 2, -2, -0.049999997, -2, -2, 0.049999997, 2, -2, -0.049999997, 2, -2, -0.049999997, -2, 2, 0.049999997, 2, -2, 0.049999997, 2, 2, 0.049999997, -2, -2, 0.049999997, 2, -2, 0.049999997, -2, 2, 0.049999997, -2, -2, -0.049999997, 2, 2, -0.049999997, 2, -2, -0.049999997, -2, 2, -0.049999997, 2, 2, -0.049999997, -2, -2, -0.049999997, -2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_88k0p"]
+material = SubResource("StandardMaterial3D_nege7")
+size = Vector3(4, 0.1, 4)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5i4l4"]
 albedo_color = Color(0.42, 0.42, 0.42, 1)
@@ -28,6 +32,15 @@ mesh = SubResource("BoxMesh_5i4l4")
 [node name="StaticBody3D" type="StaticBody3D" parent="FreeSpace"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FreeSpace/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ysdw7")
+debug_color = Color(0.89411765, 0, 0.67058825, 0.41960785)
+
+[node name="FreeSpace2" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_88k0p")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="FreeSpace2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FreeSpace2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ysdw7")
 debug_color = Color(0.89411765, 0, 0.67058825, 0.41960785)
 
