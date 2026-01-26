@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ca1b1o4wfvaqd"]
+[gd_scene load_steps=18 format=3 uid="uid://ca1b1o4wfvaqd"]
 
 [ext_resource type="PackedScene" uid="uid://b5o6vtfubadqe" path="res://RayPickerCamera/ray_picker_camera.tscn" id="1_0m7nb"]
 [ext_resource type="MeshLibrary" uid="uid://bo4rw1e423gnf" path="res://MeshLibraies/SpaceLibary.tres" id="1_u1x2a"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cxk5grgwcrjno" path="res://home/home.tscn" id="3_ws5nf"]
 [ext_resource type="Script" uid="uid://csbwa2dq34tq7" path="res://Turret/turret_manager.gd" id="5_8k6vf"]
 [ext_resource type="PackedScene" uid="uid://t4ft8hd3vqp6" path="res://Turret/turret.tscn" id="6_77ap6"]
+[ext_resource type="Script" uid="uid://dvsvpp646ry7e" path="res://Base/bank.gd" id="8_1qkdb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cbgtc"]
 sky_top_color = Color(0.46439886, 0.474028, 0.88588184, 1)
@@ -41,6 +42,11 @@ albedo_color = Color(0.053551577, 0.27387494, 2.4065375e-08, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ws5nf"]
 albedo_color = Color(0.05490196, 0.27450982, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_77y2d"]
+font_size = 64
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Base" type="Node3D"]
 
@@ -130,5 +136,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.842534, 0, -8.412359)
 script = ExtResource("5_8k6vf")
 enemy_path = NodePath("../EnemyPath")
 turret = ExtResource("6_77ap6")
+
+[node name="Bank" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+mouse_filter = 2
+script = ExtResource("8_1qkdb")
+
+[node name="Label" type="Label" parent="Bank"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Gold: 150"
+label_settings = SubResource("LabelSettings_77y2d")
 
 [connection signal="timeout" from="EnemyPath/Timer" to="EnemyPath" method="_on_timer_timeout"]
