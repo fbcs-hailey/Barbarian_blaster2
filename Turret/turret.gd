@@ -4,6 +4,7 @@ extends Node3D
 @export var projectile:PackedScene
 var enemy_path:Path3D
 var target:Node3D
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _physics_process(delta: float) -> void:
 	target=find_best_target()
@@ -16,6 +17,7 @@ func _on_timer_timeout() -> void:
 		add_child(new_projectile)
 		new_projectile.global_position=global_position
 		new_projectile.direction=global_transform.basis.z
+		animation_player.play('TurretMovement')
 
 func find_best_target()-> Enemy:
 	var best_target=null

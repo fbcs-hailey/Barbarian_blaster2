@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://t4ft8hd3vqp6"]
+[gd_scene load_steps=14 format=3 uid="uid://t4ft8hd3vqp6"]
 
 [ext_resource type="Script" uid="uid://q2bg1iud121t" path="res://Turret/turret.gd" id="1_5kpma"]
 [ext_resource type="PackedScene" uid="uid://dcb1nmqt0yxq7" path="res://Turret/projectile.tscn" id="2_djkev"]
@@ -35,6 +35,43 @@ top_radius = 0.2
 bottom_radius = 0.3
 height = 1.5
 
+[sub_resource type="Animation" id="Animation_djkev"]
+resource_name = "TurretMovement"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TurretBase/Canon:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0009999999, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.3700835, 0, 0), Vector3(1.4982256, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ttsi1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TurretBase/Canon:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.3700835, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r754r"]
+_data = {
+&"RESET": SubResource("Animation_ttsi1"),
+&"TurretMovement": SubResource("Animation_djkev")
+}
+
 [node name="Turret" type="Node3D"]
 script = ExtResource("1_5kpma")
 projectile = ExtResource("2_djkev")
@@ -52,10 +89,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.69963145, 0)
 mesh = SubResource("BoxMesh_ttsi1")
 
 [node name="Canon" type="MeshInstance3D" parent="TurretBase"]
-transform = Transform3D(1, 0, 0, 0, 0.19936794, -0.9799247, 0, 0.9799247, 0.19936794, 0, 0.9305744, 0)
+transform = Transform3D(1, 0, 0, 0, 0.19936793, -0.9799246, 0, 0.9799246, 0.19936793, 0, 0.9305744, 0)
 mesh = SubResource("CylinderMesh_2avlq")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_r754r")
+}
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
