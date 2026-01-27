@@ -6,6 +6,8 @@ class_name Enemy
 @onready var home : Home =get_tree().get_first_node_in_group('home')
 @export var max_health:int=50
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@export var pay=25
+@onready var bank: Bank = $Bank
 
 var health:int:
 	set(new_health):
@@ -13,6 +15,7 @@ var health:int:
 			animation_player.play("TakeDamage")
 		health=new_health
 		if health<1:
+			bank.gold+=pay
 			queue_free()
 
 # Called when the node enters the scene tree for the first time.
@@ -25,4 +28,6 @@ func _process(delta: float) -> void:
 	progress+=delta*speed
 	if progress_ratio==1.0:
 		home.take_damage()
+
 		queue_free()
+		

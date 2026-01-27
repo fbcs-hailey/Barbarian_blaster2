@@ -1,16 +1,22 @@
 extends Camera3D
+
 @export var gridmap:GridMap
 @export var turret_manager:TurretManager
 @onready var ray_cast_3d: RayCast3D = $RayCast3D
+@export_enum('easy','medium','hard') var diffilculty:='easy'
+@onready var bank :=get_tree().get_first_node_in_group('bank')
+var tower_dict={'easy':50,'medium':100,'hard':150}
+var tower_cost:int
+
+func _ready() -> void:
+	tower_cost=tower_dict[diffilculty]
 
 func _process(delta: float) -> void:
 	var mouse_position:Vector2=get_viewport().get_mouse_position()
 	ray_cast_3d.target_position=project_local_ray_normal(mouse_position)*100.0
-	#update the raycast 3d immediately
 	ray_cast_3d.force_raycast_update()
 	
-	
-	if ray_cast_3d.is_colliding():
+	if ray_cast_3d.is_colliding() and bank.gold>=tower_cost:
 		var collider=ray_cast_3d.get_collider()
 		if collider is GridMap:
 			var collision_point=ray_cast_3d.get_collision_point()
@@ -21,9 +27,9 @@ func _process(delta: float) -> void:
 					gridmap.set_cell_item(cell,1)
 					var tile_pos=gridmap.map_to_local(cell)
 					turret_manager.build_turret(tile_pos)
+					bank.gold-=tower_cost
 			else:
 				Input.set_default_cursor_shape(Input.CURSOR_ARROW)
 	else:
 		Input.set_default_cursor_shape(Input.CURSOR_ARROW)
-	
 	
