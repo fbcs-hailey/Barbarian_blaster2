@@ -3,7 +3,7 @@ extends Node
 @onready var timer: Timer = $Timer
 @export var game_length:=10.0
 @export var spawn_time_curve:Curve
-@export var enemy_time_curve:Curve
+@export var enemy_health_curve:Curve
 
 func _ready() -> void:
 	timer.start(game_length)
@@ -18,4 +18,4 @@ func get_spawn_time()->float:
 	return spawn_time_curve.sample(game_progress_ratio())
 
 func get_enemy_health()->float:
-	return 0.0
+	return enemy_health_curve.sample(game_progress_ratio())

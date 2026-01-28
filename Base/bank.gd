@@ -1,5 +1,6 @@
 extends MarginContainer
 class_name Bank
+
 @export var starting_gold:=150
 @onready var label: Label = $Label
 

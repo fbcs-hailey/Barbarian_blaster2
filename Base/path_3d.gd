@@ -6,6 +6,7 @@ extends Path3D
 
 func spawn_enemy():
 	var cur_enemy=enemy_scene.instantiate()
+	cur_enemy.max_health=difMan.get_enemy_health()
 	add_child(cur_enemy)
 	timer.wait_time=difMan.get_spawn_time()
 
