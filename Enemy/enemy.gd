@@ -6,7 +6,7 @@ class_name Enemy
 @onready var home : Home =get_tree().get_first_node_in_group('home')
 @export var max_health:int=50
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@export var pay=25
+@export var pay:int=25
 @onready var bank:Bank= $Bank
 
 var health:int:
