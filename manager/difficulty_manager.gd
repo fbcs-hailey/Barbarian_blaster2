@@ -8,7 +8,6 @@ extends Node
 signal stop_spawning_enemies
 
 func _ready() -> void:
-	Engine.time_scale=3
 	timer.start(game_length)
 
 func _process(delta: float) -> void:
