@@ -1,14 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2kd5vomcxpgh"]
+[gd_scene format=3 uid="uid://d2kd5vomcxpgh"]
 
 [ext_resource type="Script" uid="uid://cgldup5tgug13" path="res://meow/victory_layer.gd" id="1_8u7vy"]
+[ext_resource type="Texture2D" uid="uid://ctcdpcxm3ggqi" path="res://asstes/star.png" id="2_sxyvr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lmu8o"]
 font_size = 100
 
-[node name="VictoryLayer" type="CanvasLayer"]
+[sub_resource type="LabelSettings" id="LabelSettings_sxyvr"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_7ns04"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_hjuck"]
+font_size = 24
+
+[node name="VictoryLayer" type="CanvasLayer" unique_id=998706339]
 script = ExtResource("1_8u7vy")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2088587850]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -16,38 +26,92 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.39215687)
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1887091549]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
-custom_minimum_size = Vector2(400, 350)
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=1323100118]
+custom_minimum_size = Vector2(400, 400)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer" unique_id=781783381]
 layout_direction = 2
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=812725360]
 layout_mode = 2
 text = "Victory"
 label_settings = SubResource("LabelSettings_lmu8o")
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
+[node name="StarCon" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=390051896]
 layout_mode = 2
+
+[node name="Star1" type="TextureRect" parent="CenterContainer/PanelContainer/VBoxContainer/StarCon" unique_id=498405296]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = ExtResource("2_sxyvr")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="Star2" type="TextureRect" parent="CenterContainer/PanelContainer/VBoxContainer/StarCon" unique_id=1094549374]
+unique_name_in_owner = true
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = ExtResource("2_sxyvr")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="Star3" type="TextureRect" parent="CenterContainer/PanelContainer/VBoxContainer/StarCon" unique_id=220655808]
+unique_name_in_owner = true
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = ExtResource("2_sxyvr")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="Health" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=160557207]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(133, 0)
+layout_mode = 2
+text = " Full Health +1"
+label_settings = SubResource("LabelSettings_sxyvr")
+horizontal_alignment = 1
+
+[node name="Survive" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=1629308574]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(133, 0)
+layout_mode = 2
+text = "Survived +1"
+label_settings = SubResource("LabelSettings_7ns04")
+horizontal_alignment = 1
+
+[node name="Money" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=2134469857]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "money money money +1"
+label_settings = SubResource("LabelSettings_hjuck")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=807478207]
+layout_mode = 2
+size_flags_vertical = 10
 alignment = 1
 
-[node name="Button" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="Button" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=2019153022]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Retry"
 
-[node name="Button2" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="Button2" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1647536784]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 32

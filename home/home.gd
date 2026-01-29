@@ -20,7 +20,6 @@ func _ready() -> void:
 	#Engine.time_scale=5
 	health=max_health
 
-
 func take_damage()-> void:
 	health-=1
 	

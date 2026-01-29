@@ -7,7 +7,7 @@ class_name Enemy
 @export var max_health:int=50
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @export var pay:int=25
-@onready var bank:Bank= $Bank
+@onready var bank:=get_tree().get_first_node_in_group("bank")
 
 var health:int:
 	set(new_health):
@@ -25,6 +25,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	progress+=delta*speed
-	if progress_ratio==1.0:
+	if progress_ratio> 0.99:
 		home.take_damage()
 		queue_free()

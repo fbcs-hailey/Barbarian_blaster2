@@ -82,7 +82,7 @@ curve = SubResource("Curve3D_u1x2a")
 script = ExtResource("3_77y2d")
 enemy_scene = ExtResource("2_n5f2c")
 difMan = NodePath("../DifficultyManager")
-vicLayer = NodePath("")
+vicLayer = NodePath("../VictoryLayer")
 
 [node name="Road" type="CSGPolygon3D" parent="EnemyPath" unique_id=395570752]
 polygon = PackedVector2Array(-1.3, 0, -1, 0.05, 1, 0.05, 1.3, 0)
@@ -162,6 +162,7 @@ label_settings = SubResource("LabelSettings_77y2d")
 [node name="DifficultyManager" parent="." unique_id=127308213 instance=ExtResource("9_ka7hq")]
 
 [node name="VictoryLayer" parent="." unique_id=599948300 instance=ExtResource("10_2hat1")]
+visible = false
 
 [connection signal="timeout" from="EnemyPath/Timer" to="EnemyPath" method="_on_timer_timeout"]
 [connection signal="stop_spawning_enemies" from="DifficultyManager" to="EnemyPath" method="_on_difficulty_manager_stop_spawning_enemies"]
