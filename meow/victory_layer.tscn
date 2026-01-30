@@ -4,16 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://ctcdpcxm3ggqi" path="res://asstes/star.png" id="2_sxyvr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lmu8o"]
-font_size = 100
+font_size = 120
 
 [sub_resource type="LabelSettings" id="LabelSettings_sxyvr"]
-font_size = 24
+font_size = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_7ns04"]
-font_size = 24
+font_size = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_hjuck"]
-font_size = 24
+font_size = 32
 
 [node name="VictoryLayer" type="CanvasLayer" unique_id=998706339]
 script = ExtResource("1_8u7vy")
@@ -85,7 +85,6 @@ horizontal_alignment = 1
 
 [node name="Survive" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=1629308574]
 unique_name_in_owner = true
-visible = false
 custom_minimum_size = Vector2(133, 0)
 layout_mode = 2
 text = "Survived +1"
@@ -94,7 +93,6 @@ horizontal_alignment = 1
 
 [node name="Money" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=2134469857]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 text = "money money money +1"
 label_settings = SubResource("LabelSettings_hjuck")

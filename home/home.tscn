@@ -14,5 +14,5 @@ billboard = 1
 no_depth_test = true
 text = "5
 "
-font_size = 500
+font_size = 700
 outline_size = 100

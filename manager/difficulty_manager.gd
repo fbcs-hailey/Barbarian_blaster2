@@ -1,13 +1,14 @@
 extends Node
 
 @onready var timer: Timer = $Timer
-@export var game_length:=10.0
+@export var game_length:=180.0
 @export var spawn_time_curve:Curve
 @export var enemy_health_curve:Curve
 
 signal stop_spawning_enemies
 
 func _ready() -> void:
+	Engine.time_scale=9
 	timer.start(game_length)
 
 func _process(delta: float) -> void:
